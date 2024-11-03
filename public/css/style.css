@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.container-main {
+    display: flex;
+    justify-content: space-between;
+    border-radius: .5rem;
+    padding: .8rem .8rem .2rem .8rem;
+    gap: .4rem;
+    box-shadow: 1px 1px 5px 1px #cbd5e1;
+}
+
+.container-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+}
+
+.container-button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-card {
+    margin-top: 1rem;
+}
+
+.module-card {
+    margin-top: .8rem;
+    margin-left: 2rem;
+}
+
+.content-card {
+    margin-top: .4rem;
+    margin-left: 4rem;
+}
+
+.user-card {
+    margin-top: 1rem;
+}
+
+.content-card-report {
+    margin-top: .8rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.notification {
+    /* display: none; */
+    position: fixed;
+    top: 1rem;
+    right: 4rem;
+    padding: 1rem;
+    color: #fff;
+    border-radius: .4rem;
+    z-index: 9999;
+}
+
+.notification.sucess {
+    background-color: #4caf4f;
+}
+
+.notification.error {
+    background-color: #ee6262;
+}

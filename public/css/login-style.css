@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+
+    border: 1px solid #555555;
+    padding: 1rem;
+    border-radius: .4rem;
+}
+
+.notification {
+    /* display: none; */
+    position: fixed;
+    top: 1rem;
+    right: 4rem;
+    padding: 1rem;
+    color: #fff;
+    border-radius: .4rem;
+    z-index: 9999;
+}
+
+.notification.sucess {
+    background-color: #4caf4f;
+}
+
+.notification.error {
+    background-color: #ee6262;
+}
