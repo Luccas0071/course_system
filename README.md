@@ -10,11 +10,11 @@ Este é um projeto de cadastro de cursos com módulos, conteúdos e usuários, a
 
 ## Funcionalidades
  - Login: Sistema divido por camada de usuário administrador e usuário padrão.
- - Login Administrador.
+ - Login Usuário Administrador.
      - Cadastro de Cursos: Permite o registro de cursos, cada um contendo módulos e conteúdos.
      - Cadastro de Usuários: Controle de acesso dos usuários através de autenticação JWT.
      - Relatórios: Visualize relatórios sobre cursos, módulos e usuários cadastrados.
- - Login Administrador.
+ - Login Usuário Padrão.
     - Vizualizar Conteúdo: Permite que usuário observe os conteudos e marque os já visualizados.
 
 ## Estrutura de Arquitetura
