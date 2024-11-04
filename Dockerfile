@@ -1,22 +1,22 @@
-FROM php:7.4-fpm
+FROM php:7.4-apache
 
 RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    libonig-dev \
     libpq-dev \
-    git \
-    zip \
-    unzip \
-    && docker-php-ext-install pdo pdo_pgsql
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install -j$(nproc) pdo pdo_mysql pdo_pgsql
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN a2enmod rewrite
 
-WORKDIR /var/www
-
+WORKDIR /var/www/html
 COPY . .
 
-RUN composer install
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+RUN composer install --no-interaction --optimize-autoloader --no-dev
 
-RUN chown -R www-data:www-data /var/www/storage
 
-EXPOSE 9000
-
-CMD ["php-fpm"]
+EXPOSE 80
